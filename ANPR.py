@@ -65,7 +65,7 @@ characters,char_order=ccs.CCA_segmentation(binary_plate)
 
 
 
-model = load_model('Neural_Net_Models/CNN_binary.h5')
+model = load_model('Neural_Net_Models/CNN4.h5')
 characters=np.reshape(characters,(10,28,28,1))
 
 
