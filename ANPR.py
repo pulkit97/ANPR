@@ -81,6 +81,10 @@ out_str=""
 for i in out:
     out_str=out_str+diction[i]
     
-print(out_str)
-
-        
+#Ordering the string output
+column_list_copy = char_order[:]    
+char_order.sort()
+rightplate_string=''
+for each in char_order:
+    rightplate_string += out_str[column_list_copy.index(each)]
+print(rightplate_string)
