@@ -9,7 +9,7 @@ from skimage.filters import threshold_otsu
 from skimage.filters import median
 from skimage.filters import sobel
 from skimage.morphology import disk
-#Function to preprocess
+#Function to preprocess the image
 
 def preprocess(img):
     
