@@ -16,7 +16,7 @@ def preprocess(img):
     #Applying otsu method for binarization
     threshold_val=threshold_otsu(img)
     binary_img=img>threshold_val
-    med=median(binary_img,disk(5))
+    med=median(binary_img,disk(2))
     return med
 
 def preprocess_no_med(img):

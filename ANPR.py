@@ -18,7 +18,7 @@ from keras.models import load_model
 import numpy as np
 import Cleaning
 #Reading the data as Greyscale
-img=imread("ImageData\Demo_b.jpg",as_grey=True)
+img=imread("ImageData\Demo_d.jpg",as_grey=True)
 img_obj=[]
 #Displaying the image
 fig,(ax1)=plt.subplots(1)
@@ -69,13 +69,13 @@ characters,char_order=ccs.CCA_segmentation(binary_plate)
 
 
 '''fig,(ax1)=plt.subplots(1)
-ax1.imshow(characters[1],cmap="gray")'''
+ax1.imshow(characters[7],cmap="gray")'''
 
 
 #Prediction
 
 model = load_model('Neural_Net_Models/CNN.h5')
-characters=np.reshape(characters,(10,28,28,1))
+characters=np.reshape(characters,(len(characters),28,28,1))
 
 
 
