@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sun Mar 18 17:49:12 2018
-hello
+
 @author: pulkit
 """
 #Importing the required libraries
@@ -9,7 +9,7 @@ from skimage.filters import threshold_otsu
 from skimage.filters import median
 from skimage.filters import sobel
 from skimage.morphology import disk
-#Function to preprocess the image
+#Function to preprocess
 
 def preprocess(img):
     
@@ -18,4 +18,9 @@ def preprocess(img):
     binary_img=img>threshold_val
     med=median(binary_img,disk(5))
     return med
+
+def preprocess_no_med(img):
+    threshold_val=threshold_otsu(img)
+    binary_img=img>threshold_val
+    return binary_img	
     

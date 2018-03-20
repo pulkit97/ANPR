@@ -10,7 +10,7 @@ from skimage import measure
 
 def CCA_plate(binary_img):
     labels=measure.label(binary_img)
-    plate_dims=(0.04*labels.shape[0],0.15*labels.shape[0],0.16*labels.shape[1],0.2*labels.shape[1])
+    plate_dims=(0.01*labels.shape[0],0.30*labels.shape[0],0.01*labels.shape[1],0.3*labels.shape[1])
     obj_coord=[]
     min_height, max_height, min_width, max_width = plate_dims
     #Processing each connnected component and looking for number plate like objects and constructung borders for illustration

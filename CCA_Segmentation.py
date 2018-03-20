@@ -35,7 +35,7 @@ def CCA_segmentation(plate):
             
             keepAspectRatio = aspectRatio < 1
             keepSolidity = solidity > 0.15
-            keepHeight = heightRatio > 0.36 and heightRatio < 0.40
+            keepHeight = heightRatio > 0.20 and heightRatio < 0.60
             
             
             if keepAspectRatio and keepSolidity and keepHeight:
