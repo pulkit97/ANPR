@@ -9,6 +9,8 @@ import cv2
 from skimage import measure
 import numpy as np
 from skimage.transform import resize
+import matplotlib.pyplot as plt
+
 
 def CCA_segmentation(plate):
     orig_plate=plate
@@ -35,11 +37,13 @@ def CCA_segmentation(plate):
             
             keepAspectRatio = aspectRatio < 1
             keepSolidity = solidity > 0.15
-            keepHeight = heightRatio > 0.36 and heightRatio < 0.40
+            keepHeight = heightRatio > 0.37 and heightRatio < 0.70
             
             
             if keepAspectRatio and keepSolidity and keepHeight:
-                img=resize(orig_plate[boxY-2:boxY+boxH+2,boxX-1:boxX+boxW+1],(28,28))
+                img=orig_plate[boxY-2:boxY+boxH+2,boxX-1:boxX+boxW+1]
+                img=np.lib.pad(img, ((2,2),(7,7)), 'constant',constant_values=((255,255),(255,255)))
+                img=resize(img,(28,28))
                 characters.append(img)
                 column_list.append(boxX)
                 
